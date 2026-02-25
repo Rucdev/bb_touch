@@ -21,6 +21,7 @@ object GameConfig {
     // 表示したいアイテムをこのリストに追加していきます
     val items = listOf(
         GameItem(R.drawable.tanbarin, Color(0xFF8BC34A), R.raw.tanbarin),
-        GameItem(R.drawable.guiter, Color(0xFFF44336), R.raw.guiter_scrach)
+        GameItem(R.drawable.guiter, Color(0xFFF44336), R.raw.guiter_scrach),
+        GameItem(R.drawable.fumikiri, Color(0xFA4CAF50), R.raw.fumikiri)
     )
 }

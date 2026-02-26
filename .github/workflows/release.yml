@@ -37,6 +37,7 @@ jobs:
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
+        env:
           buildToolsVersion: "34.0.0" # エラー回避のために明示的に指定
 
       - name: Rename APK

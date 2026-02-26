@@ -28,11 +28,18 @@ jobs:
       - name: Build Release APK
         run: ./gradlew assembleRelease
 
+      - name: Sign APK
+        uses: r0adkll/sign-android-release@v1
+        id: sign_app
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+
       - name: Rename APK
-        run: |
-          # 署名なしの場合、通常 app-release-unsigned.apk または app-release.apk が生成されます
-          # 確実にリネームするためにワイルドカードを使用します
-          mv app/build/outputs/apk/release/*.apk app/build/outputs/apk/release/bb_touch_${{ github.ref_name }}.apk
+        run: mv ${{ steps.sign_app.outputs.signedReleaseFile }} app/build/outputs/apk/release/bb_touch_${{ github.ref_name }}.apk
 
       - name: Create Release
         uses: softprops/action-gh-release@v2

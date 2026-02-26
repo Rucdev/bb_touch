@@ -4,6 +4,10 @@
 # Log file
 *.log
 
+# Keystore files (Security)
+*.jks
+*.keystore
+
 # BlueJ files
 *.ctxt
 

@@ -22,6 +22,8 @@ object GameConfig {
     val items = listOf(
         GameItem(R.drawable.tanbarin, Color(0xFF8BC34A), R.raw.tanbarin),
         GameItem(R.drawable.guiter, Color(0xFFF44336), R.raw.guiter_scrach),
-        GameItem(R.drawable.fumikiri, Color(0xFA4CAF50), R.raw.fumikiri)
+        GameItem(R.drawable.fumikiri, Color(0xFA549DF5), R.raw.fumikiri),
+        GameItem(R.drawable.elephant, Color(0xFF36D3B1), R.raw.elephant),
+        GameItem(R.drawable.police_car, Color(0xFFFFEB3B), R.raw.police_car)
     )
 }
